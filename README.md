@@ -84,7 +84,7 @@ It can be extended by adding new adapters for additional services, following the
 Here's the basic code structure, using mock classes where necessary:
 
 
-# service_adapter.py
+`# service_adapter.py
 from abc import ABC, abstractmethod
 
 class ServiceAdapter(ABC):
@@ -170,3 +170,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+`
