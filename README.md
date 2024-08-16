@@ -140,4 +140,33 @@ def main():
     github_adapter.fix_configuration()
 
 if __name__ == "__main__":
+    main()    def fix_configuration(self):
+        self.protector.enforce_branch_protections()
+
+# github_checker.py (mock)
+class GitHubChecker:
+    def __init__(self, github_client):
+        self.github = github_client
+
+    def check_public_repositories(self):
+        print("Checking public repositories for sensitive data...")
+
+# github_protector.py (mock)
+class GitHubProtector:
+    def __init__(self, github_client):
+        self.github = github_client
+
+    def enforce_branch_protections(self):
+        print("Enforcing branch protections...")
+
+# main.py
+from adapters.github_adapter import GitHubAdapter
+
+def main():
+    token = 'your_github_token'
+    github_adapter = GitHubAdapter(token)
+    github_adapter.check_configuration()
+    github_adapter.fix_configuration()
+
+if __name__ == "__main__":
     main()
