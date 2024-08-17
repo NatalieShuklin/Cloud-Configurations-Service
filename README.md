@@ -63,7 +63,9 @@ A configuration file or environment variables can be used to specify which servi
 **Monitoring Performance:**
 
 Logging: The system logs all operations, including the time taken to perform checks and fixes, allowing performance metrics to be extracted from the logs.
+
 Metrics: The framework can be extended to track key performance metrics, such as the number of misconfigurations detected, the time taken to fix issues, and the frequency of specific types of misconfigurations.
+
 Alerts: The alerting system helps monitor the health of the system by notifying administrators of any critical issues or failures in the checking/fixing process.
 
 
