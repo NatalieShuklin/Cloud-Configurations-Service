@@ -72,9 +72,13 @@ Alerts: The alerting system helps monitor the health of the system by notifying 
 **Code Structure**:
 
 adapters/service_adapter.py: Defines the abstract base class ServiceAdapter, which all specific service adapters must implement. This enforces consistency across all service adapters.
+
 adapters/github_adapter.py: Implements the ServiceAdapter interface for GitHub-specific checks and fixes, using two modules: GitHubChecker and GitHubProtector.
+
 github_modules/github_checker.py: Contains the logic for checking GitHub repositories, such as ensuring that public repositories do not contain sensitive information.
+
 github_modules/github_protector.py: Contains the logic for enforcing branch protection rules on GitHub repositories.
+
 main.py: The entry point for the application. Initializes the service manager and runs the scheduled checks and fixes for all services.
 
 **Usage:**
