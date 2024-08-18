@@ -1,4 +1,4 @@
-# VaronisHomeTest
+# MisconfigurationsTest
 
 **1.** **List of Specific Configurations:**
 - Detecting and privatizing repositories containing sensitive information.
