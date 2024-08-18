@@ -1,4 +1,4 @@
-# MisconfigurationsTest
+# Misconfigurations for GitHub
 
 **1.** **List of Specific Configurations:**
 - Detecting and privatizing repositories containing sensitive information.
