@@ -1,13 +1,15 @@
+import random
 from github import Github
 
 class BranchProtectionRiskDemo:
-    """Demonstrates the risks of misconfiguring branch protection."""
+    """Simulates the risks of misconfiguring branch protection."""
 
-    def __init__(self, branch):
+    def __init__(self, branch, repo):
         self.branch = branch
+        self.repo = repo
 
     def demonstrate_risk(self):
-        """Demonstrates the risks if branch protection settings are misconfigured."""
+        """Simulates the consequences of misconfiguring branch protection."""
         protection = self.branch.get_protection()
 
         pr_reviews_required = protection.required_pull_request_reviews is not None
@@ -15,43 +17,64 @@ class BranchProtectionRiskDemo:
         push_restrictions = protection.restrictions is not None
 
         print("\nBranch Protection Risk Demonstration:")
+
         if not pr_reviews_required:
-            print("[RISK] Without pull request reviews, unreviewed code can be merged, introducing vulnerabilities.")
-        else:
-            print("[SAFE] Pull request reviews are required, reducing the risk of unreviewed code being merged.")
+            print("[RISK] Simulating merging unreviewed code into the branch...")
+            self.simulate_unreviewed_code_merge()
 
         if not status_checks_required:
-            print("[RISK] Without status checks, broken or untested code could be merged into the protected branch.")
-        else:
-            print("[SAFE] Status checks are required, ensuring only tested code is merged.")
+            print("[RISK] Simulating merging untested code into the branch...")
+            self.simulate_untested_code_merge()
 
         if not push_restrictions:
-            print("[RISK] Without push restrictions, any contributor can push directly to the branch, bypassing reviews.")
-        else:
-            print("[SAFE] Push restrictions are in place, ensuring only authorized users can push directly to the branch.")
+            print("[RISK] Simulating unauthorized direct push to the branch...")
+            self.simulate_unauthorized_push()
 
+    def simulate_unreviewed_code_merge(self):
+        """Simulate merging unreviewed code into the branch."""
+        # Simulate the risk of unreviewed code being merged
+        print("  - Unreviewed code has been merged, introducing potential bugs or vulnerabilities.")
+
+    def simulate_untested_code_merge(self):
+        """Simulate merging untested code into the branch."""
+        # Simulate the risk of untested or broken code being merged
+        print("  - Untested code has been merged, potentially breaking the application.")
+
+    def simulate_unauthorized_push(self):
+        """Simulate unauthorized direct push to the branch."""
+        # Simulate an unauthorized push
+        print("  - Unauthorized changes have been pushed directly to the branch, bypassing review.")
 
 class DependabotRiskDemo:
-    """Demonstrates the risks of misconfiguring Dependabot alerts and security updates."""
+    """Simulates the risks of misconfiguring Dependabot alerts and security updates."""
 
     def __init__(self, repo):
         self.repo = repo
 
     def demonstrate_risk(self):
-        """Demonstrates the risks if Dependabot settings are misconfigured."""
+        """Simulates the consequences of misconfiguring Dependabot settings."""
         dependabot_alerts_enabled = self.repo.get_vulnerability_alert()
         dependabot_security_updates_enabled = self.repo.get_dependabot_security_updates_enabled()
 
         print("\nDependabot Risk Demonstration:")
+
         if not dependabot_alerts_enabled:
-            print("[RISK] Without Dependabot alerts, vulnerabilities in dependencies may go unnoticed.")
-        else:
-            print("[SAFE] Dependabot alerts are enabled, so you will be notified of vulnerabilities.")
+            print("[RISK] Simulating the impact of missing vulnerability alerts...")
+            self.simulate_missed_vulnerability_alert()
 
         if not dependabot_security_updates_enabled:
-            print("[RISK] Without Dependabot security updates, known vulnerabilities in dependencies may remain unpatched.")
-        else:
-            print("[SAFE] Dependabot security updates are enabled, ensuring vulnerabilities are automatically patched.")
+            print("[RISK] Simulating the impact of unpatched vulnerabilities...")
+            self.simulate_unpatched_vulnerabilities()
+
+    def simulate_missed_vulnerability_alert(self):
+        """Simulate the impact of missing vulnerability alerts."""
+        # Simulate a critical vulnerability going unnoticed
+        print("  - A critical vulnerability in a dependency went unnoticed, exposing the project to attacks.")
+
+    def simulate_unpatched_vulnerabilities(self):
+        """Simulate the impact of unpatched vulnerabilities."""
+        # Simulate vulnerabilities that remain unpatched
+        print("  - Known vulnerabilities in dependencies remain unpatched, increasing the risk of exploitation.")
 
 
 # Example usage of the script
@@ -67,7 +90,7 @@ if __name__ == "__main__":
     branch = repo.get_branch(branch_name)
 
     # Create risk demonstration objects
-    branch_protection_risk_demo = BranchProtectionRiskDemo(branch)
+    branch_protection_risk_demo = BranchProtectionRiskDemo(branch, repo)
     dependabot_risk_demo = DependabotRiskDemo(repo)
 
     # Demonstrate risks for branch protection misconfiguration
