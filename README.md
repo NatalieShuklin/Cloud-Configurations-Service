@@ -11,7 +11,8 @@
 
 **Class Diagram:**
 
-![image](https://github.com/user-attachments/assets/032908c6-c877-4b7d-aa3d-dfddd55c8874)
+![image](https://github.com/user-attachments/assets/8d1ba66c-17c8-4d47-a5e7-845ff9ba1c0b)
+
 
 
 
