@@ -1,4 +1,5 @@
 
+**Cloud-Configurations-Service**
 
 
 
@@ -10,7 +11,8 @@
 
 **Class Diagram:**
 
-![image](https://github.com/user-attachments/assets/556554b6-cb11-4687-88e7-c5d04655526b)
+![image](https://github.com/user-attachments/assets/3a16556f-98d0-41ec-8e3e-a70c9b0c4820)
+
 
 
 
