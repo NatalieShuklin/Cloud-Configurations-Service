@@ -1,4 +1,6 @@
 # GitHub Checker
+ # can do comparisons for  different configurations
+
 class GitHubChecker:
     def check_security_configs(self, curr_config_list, expected_config_list):
         """Checks if current configurations match expected configurations."""
