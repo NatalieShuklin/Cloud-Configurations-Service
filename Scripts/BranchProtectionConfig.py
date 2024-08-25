@@ -42,3 +42,30 @@ class BranchProtectionConfiguration:
         if not protection["push_restrictions"]:
             self.branch.edit_protection(restrictions={'users': [], 'teams': []})
             print(f"Push restrictions enabled for {self.branch.name}.")
+
+
+
+# Example usage of the script
+if __name__ == "__main__":
+    # Assuming `branch` is a GitHub branch object that has been retrieved through the GitHub API
+    # For example, using PyGithub to get the branch object
+    from github import Github
+
+    # Replace with your GitHub token and repository details
+    access_token = "your_github_access_token"
+    repository_name = "your_username/your_repository"
+    branch_name = "main"
+
+    # Authenticate and get the repository and branch objects
+    g = Github(access_token)
+    repo = g.get_repo(repository_name)
+    branch = repo.get_branch(branch_name)
+
+    # Create a BranchProtectionConfiguration object and run the checks/fixes
+    branch_protection = BranchProtectionConfiguration(branch)
+
+    # Check the current branch protection settings
+    branch_protection.check()
+
+    # Apply fixes only if needed
+    branch_protection.fix()
