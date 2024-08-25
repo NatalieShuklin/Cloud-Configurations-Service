@@ -62,20 +62,13 @@ class DependabotRiskDemo:
             print("[RISK] Simulating the impact of missing vulnerability alerts...")
             self.simulate_missed_vulnerability_alert()
 
-        if not dependabot_security_updates_enabled:
-            print("[RISK] Simulating the impact of unpatched vulnerabilities...")
-            self.simulate_unpatched_vulnerabilities()
 
     def simulate_missed_vulnerability_alert(self):
         """Simulate the impact of missing vulnerability alerts."""
         # Simulate a critical vulnerability going unnoticed
         print("  - A critical vulnerability in a dependency went unnoticed, exposing the project to attacks.")
 
-    def simulate_unpatched_vulnerabilities(self):
-        """Simulate the impact of unpatched vulnerabilities."""
-        # Simulate vulnerabilities that remain unpatched
-        print("  - Known vulnerabilities in dependencies remain unpatched, increasing the risk of exploitation.")
-
+ 
 
 # Example usage of the script
 if __name__ == "__main__":
