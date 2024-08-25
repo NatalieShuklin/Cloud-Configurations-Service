@@ -16,6 +16,10 @@
 
 
 **1. Branch Protection**
+
+![image](https://github.com/user-attachments/assets/1dbfde5b-564c-4ebf-9e70-d4499086fccf)
+
+
 **i.** **What do you recommend as a best practice for this configuration?**
 
 Best Practice: Enable branch protection rules that require pull request reviews, enforce status checks, and restrict direct pushes. These rules ensure that all code changes are reviewed, tested, and approved before being merged into important branches (e.g., the "main" branch).
@@ -60,6 +64,11 @@ Enabling branch protection rules may slow down the process of merging changes, a
 
 
 **2. Dependabot**
+
+![image](https://github.com/user-attachments/assets/fb68aa14-d8aa-4184-8018-c1c984a0ef45)
+
+
+
 **i.** **What do you recommend as a best practice for this configuration?**
 
 Best Practice: Enable both Dependabot alerts and security updates. Dependabot alerts notify you of known vulnerabilities in your project’s dependencies, and security updates automatically create pull requests to fix these vulnerabilities.
